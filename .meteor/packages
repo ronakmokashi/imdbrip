@@ -6,3 +6,7 @@
 standard-app-packages
 autopublish
 insecure
+accounts-github
+accounts-facebook
+accounts-password
+accounts-ui-bootstrap-3
