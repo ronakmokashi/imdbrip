@@ -9,7 +9,7 @@
 .collections{
     padding: 10px;
     width: 245px;
-    height: 600px;
+    height: 650px;
     margin-top: 50px;
     margin-bottom: 20px;
     margin-left: 12px;
@@ -20,8 +20,6 @@
 
 .wrapper{
     width: 100%;
-
-
     padding-left: 65px;
 }
 
@@ -35,33 +33,30 @@
 
 .thumbnail{
     margin-bottom: 20px;
-
 }
 
+#carousel-example-generic{
+    width: 800px;
+    margin-top: 100px;
+}
 
-#login-buttons{
+.car-center{
+    text-align: -webkit-center;
+    margin-bottom: 50px;
+}
 
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
+#login-dropdown-list{
+    margin-top: 15px;
+}
 
+body{
+    background-color: #000;
+}
 
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
+span{
+    color: #aaa;
+ }
 
+label{
+    color: #ffffff;
 }
