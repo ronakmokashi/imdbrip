@@ -1,0 +1,38 @@
+IMDB PROBLEM DEFINITION
+
+Components needed:
+1. IMDB user login
+2. Search Box for searching movies.
+3. Dropdown for selecting movies, tv series, etc.
+4. Ratings bar for rating the movies, tv series, etc.
+5. Latest releases on the homepage 
+6. Two types of users: i.Premium user.  ii.Normal user
+
+1. IMDB user login:
+	The user needs to login in order to rate the movies or tv series. The user needs to register first inorder to be logged in.
+    After getting logged in , the user can now write reviews and rate movies and tv series on IMDB
+
+2. Search Box for movies, tv series, etc
+	The movies and the tv series are stored on the dB. The user should be able to retrieve those via the search box.(alphabetically)
+
+3. Dropdown for selecting movies, tv series, etc.
+	The dropdown allows user to switch between the view i.e Movies, Tv Series, etc etc.(Home Page for each of them)
+
+4. Ratings bar for rating the movies, tv series, etc.
+	This is used to rate the movies and series on IMDB. The ratings will get stored along with the userid in the database.
+	User can only rate on IMDB if he is logged in into it.
+
+5. Latest releases on the homepage
+	The movies or series on the homepage has to be sorted according to their upcoming release dates.
+
+6. Two types of users: i.Premium user.  ii.Normal user
+	here the premium users can list their own movies or series but should not be able to rate their own movies. THey can edit content for their respective movies. 
+	a normal user can just view the movies but can't add any. But he can rate any movie or series on IMDB. 
+
+
+Basic Workflow for IMDB:
+
+- When the user visits IMDB for the first time, he has to register and then log in. 
+- Now he can scroll through the imdb homepage, search for movies, check their casts out, etc.
+- the user can also switch between movies and tv series which will give him the resepective views.
+- he can also wirte a review for any movie or a series and also he can rate those movies.

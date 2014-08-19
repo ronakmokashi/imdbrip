@@ -1,0 +1,129 @@
+<head>
+  <title>IMDB RIP</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+{{>navigation}}
+{{>sortmovie}}
+{{>cleardiv}}
+{{>collections}}
+
+</body>
+
+
+<template name = "navigation">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">IMDb</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Movies & Tv<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><span class="label label-info ">Movies</span></li>
+              <!--<li class="divider"></li>-->
+              <li><a href="#">In Theatres</a></li>
+              <li><a href="#">Latest Trailers</a></li>
+              <li><a href="#">Coming Soon</a></li>
+              <li class="divider"></li>
+              <li><span class="label label-info ">Tv</span></li>
+              <!--<li class="divider"></li>-->
+              <li><a href="#">Tv Home</a></li>
+              <li><a href="#">On Tonight</a></li>
+              <li><a href="#">Coming Soon</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group ">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <button class="btn btn-default signin" data-toggle="modal" data-target="#myModal">Sign In</button>
+          </li>
+        </ul>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Register</h4>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Sign In</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</template>
+
+<template name="sortmovie">
+  <div class="pull-right sort">
+  <!-- Split button -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-info sorting">Sort by</button>
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a class="ascending" href="#">A-z</a></li>
+      <li><a class="descending" href="#">Z-a</a></li>
+      <li><a class="rate" href="#">Ratings</a></li>
+    </ul>
+  </div>
+    </div>
+</template>
+
+<template name="cleardiv">
+  <div class="clear"></div>
+</template>
+
+<template name = "collections">
+  <div class="wrapper">
+    {{#each movie}}
+    <div class="collections">
+      <div class="text-center">
+        <img class = "thumbnail" src="{{thumbnail}}">
+      </div>
+      <div class="clear"></div>
+      <label>Movie:</label>
+      <span>{{movie_name}}</span>
+      <div class="clear"></div>
+      <label>Rating:</label>
+      <span>{{rating}}</span>
+      <div class="clear"></div>
+      <label>Description:</label>
+      <div class="clear"></div>
+      <span>{{description}}</span>
+    </div>
+    {{/each}}
+  </div>
+</template>
+
