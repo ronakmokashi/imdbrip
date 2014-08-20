@@ -1,14 +1,11 @@
 <head>
   <title>IMDB RIP</title>
-
-  <link rel="stylesheet" type="text/css" href="style.css">
-
-
+  <script type="text/javascript" src="http://livevalidation.com/javascripts/src/1.3/livevalidation_standalone.compressed.js"></script>
 </head>
 
 <body>
 {{>navigation}}
-<!--{{>carousal}}-->
+{{>addmovie}}
 {{>sortmovie}}
 {{>cleardiv}}
 {{>collections}}
@@ -27,33 +24,28 @@
         </button>
         <a class="navbar-brand" href="#">IMDb</a>
       </div>
-
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Movies & Tv<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Movies<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><span class="label label-info ">Movies</span></li>
+              <li><span class="label label-info">Movies</span></li>
               <!--<li class="divider"></li>-->
-              <li><a href="#">In Theatres</a></li>
-              <li><a href="#">Latest Trailers</a></li>
-              <li><a href="#">Coming Soon</a></li>
-              <li class="divider"></li>
-              <li><span class="label label-info ">Tv</span></li>
-              <!--<li class="divider"></li>-->
-              <li><a href="#">Tv Home</a></li>
-              <li><a href="#">On Tonight</a></li>
+              <li><a href="#">Add a Movie</a></li>
+              <li><a href="#">Take a Quiz</a></li>
               <li><a href="#">Coming Soon</a></li>
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group ">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+        <!--{{#if currentUser}}-->
+        <!--<form class="navbar-form navbar-left" role="search">-->
+        <!--<div class="form-group ">-->
+        <!--<input type="text" class="form-control" placeholder="Search">-->
+        <!--</div>-->
+        <!--<button type="submit" class="btn btn-default">Submit</button>-->
+        <!--</form>-->
+        <!--{{/if}}-->
         <ul class="nav navbar-nav navbar-right">
           <li>
             {{> loginButtons align="right"}}
@@ -66,9 +58,13 @@
 </template>
 
 <template name="sortmovie">
+  <br>
+  <br>
+  <h2><span class="label label-info" id="movie-label">Movies</span></h2>
+  <hr>
   <div class="pull-right sort">
     <!-- Split button -->
-    <div class="btn-group">
+    <div class="btn-group" id="srt-btn">
       <button type="button" class="btn btn-info sorting">Sort by</button>
       <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
         <span class="caret"></span>
@@ -96,9 +92,6 @@
         <img class = "thumbnail" src="{{thumbnail}}">
       </div>
       <div class="clear"></div>
-      <label>ID:</label>
-      <span>{{movie_id}}</span>
-      <div class="clear"></div>
       <label>Movie:</label>
       <span>{{movie_name}}</span>
       <div class="clear"></div>
@@ -124,9 +117,35 @@
       <span class="label label-danger">You need to Sign in to rate the movie</span>
       {{/if}}
       {{/if}}
-
     </div>
     {{/each}}
   </div>
 </template>
 
+<template name ="addmovie">
+  {{#if currentUser}}
+  <h2><span class="label label-info" id="movie-label">Add a movie</span></h2>
+  <hr>
+  <div class="row">
+    <div class="col-lg-5 col-lg-offset-1" id="addform">
+      <div class="input-group" id="movie-form1">
+        <span class="input-group-addon">Cover:</span>
+        <input type="text" class="form-control " id="url" placeholder="URL for your Cover picture">
+      </div>
+      <div class="input-group" id="movie-form2">
+        <span class="input-group-addon">Title:</span>
+        <input type="text" class="form-control movie-form" id="title" placeholder="Title of your movie">
+      </div>
+      <div class="input-group" id="movie-form3" >
+        <span class="input-group-addon">Release Date:</span>
+        <input type="text" class="form-control movie-form" id="date" placeholder="Eg. Sun Dec 11 2011 ">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="movie-form4">Description:</span>
+        <input type="text" class="form-control movie-form" id="desc" placeholder="Gist of your movie">
+      </div>
+      <button type="button" id="publish" class= "btn btn-default">Publish</button>
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+  {{/if}}
+</template>

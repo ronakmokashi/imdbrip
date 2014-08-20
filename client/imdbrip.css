@@ -2,7 +2,9 @@
     margin: 8px;
 }
 
-
+#movie{
+    margin-top: 7px;
+}
 
 .collections{
     padding: 10px;
@@ -59,3 +61,21 @@
     margin-left: 20px;
 }
 
+#movie-form1, #movie-form2,#movie-form3,#movie-form4{
+    margin-bottom: 10px;
+}
+
+#publish{
+    margin-top: 10px;
+}
+
+#movie-label{
+    margin-left: 70px;
+}
+
+#addform{
+    border-right: 1px solid #222;
+    padding-right: 100px;
+
+
+}
