@@ -2,9 +2,7 @@
     margin: 8px;
 }
 
-.label{
-    margin: 10px;
-}
+
 
 .collections{
     padding: 10px;
@@ -49,14 +47,15 @@
     margin-top: 15px;
 }
 
-body{
-    background-color: #000;
+#ratinginput{
+    width: 55px;
 }
 
-span{
-    color: #aaa;
- }
-
-label{
-    color: #ffffff;
+#rateinput{
+    margin-top: 5px;
 }
+
+#send{
+    margin-left: 20px;
+}
+

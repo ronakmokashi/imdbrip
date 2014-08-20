@@ -7,6 +7,7 @@ Components needed:
 4. Ratings bar for rating the movies, tv series, etc.
 5. Latest releases on the homepage 
 6. Two types of users: i.Premium user.  ii.Normal user
+7. webpage visit counter
 
 1. IMDB user login:
 	The user needs to login in order to rate the movies or tv series. The user needs to register first inorder to be logged in.
@@ -36,3 +37,24 @@ Basic Workflow for IMDB:
 - Now he can scroll through the imdb homepage, search for movies, check their casts out, etc.
 - the user can also switch between movies and tv series which will give him the resepective views.
 - he can also wirte a review for any movie or a series and also he can rate those movies.
+
+
+
+
+rating:
+- when rating is present in the db show only the rating label and its value in the span.
+- when not present, allow the user to add it inside a textbox and submit it. Update it into the db
+  so that it turns into a label and span.
+- when user is not logged in, do not show the textbox to take in values
+
+
+
+
+
+{{#if currentUser}}
+      <div class="input-group" id="rateinput">
+        <div class="input-group-addon" id="addon">Rating</div>
+        <input class="form-control" id="ratinginput" type="email" placeholder="0-10">
+        <button type="button" id="send" class= "btn btn-default">Submit</button>
+      </div>
+      {{/if}}
