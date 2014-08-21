@@ -6,6 +6,7 @@
 <body>
 {{>navigation}}
 {{>addmovie}}
+{{>cleardiv}}
 {{>sortmovie}}
 {{>cleardiv}}
 {{>collections}}
@@ -126,26 +127,29 @@
   {{#if currentUser}}
   <h2><span class="label label-info" id="movie-label">Add a movie</span></h2>
   <hr>
-  <div class="row">
+  <!--<div class="row">-->
     <div class="col-lg-5 col-lg-offset-1" id="addform">
       <div class="input-group" id="movie-form1">
-        <span class="input-group-addon">Cover:</span>
+        <span class="input-group-addon" id="addon4">Cover:</span>
         <input type="text" class="form-control " id="url" placeholder="URL for your Cover picture">
       </div>
       <div class="input-group" id="movie-form2">
-        <span class="input-group-addon">Title:</span>
+        <span class="input-group-addon" id="addon4">Title:</span>
         <input type="text" class="form-control movie-form" id="title" placeholder="Title of your movie">
       </div>
       <div class="input-group" id="movie-form3" >
-        <span class="input-group-addon">Release Date:</span>
+        <span class="input-group-addon" id="addon4">Release Date:</span>
         <input type="text" class="form-control movie-form" id="date" placeholder="Eg. Sun Dec 11 2011 ">
       </div>
       <div class="input-group">
-        <span class="input-group-addon" id="movie-form4">Description:</span>
+        <span class="input-group-addon" id="addon4">Description:</span>
         <input type="text" class="form-control movie-form" id="desc" placeholder="Gist of your movie">
       </div>
-      <button type="button" id="publish" class= "btn btn-default">Publish</button>
-    </div><!-- /.col-lg-6 -->
-  </div><!-- /.row -->
+             <button type="button" id="publish" class= "btn btn-default">Publish</button>
+          </div><!-- /.col-lg-6 -->
+  <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
   {{/if}}
+  <div class="or-spacer-vertical right">
+    <div class="mask"></div>
+  </div>
 </template>
