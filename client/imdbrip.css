@@ -110,7 +110,7 @@
 
 #addon4{
     width: 115px;
-    
+
 }
 
 #url,#title,#desc,#date{
@@ -132,9 +132,14 @@
     width: 224px;
     float: left;
     margin-left: 20px;
-    
+
 }
 
 .wrap{
     padding: 28px;
+}
+
+#thumb_preview{
+    width: 224px;
+    margin-left: 180px;
 }
