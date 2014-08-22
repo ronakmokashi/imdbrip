@@ -121,3 +121,20 @@
     margin-bottom: 30px;
     margin-top: 60px;
 }
+
+#previewform{
+    float: left;
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+
+#thumb{
+    width: 224px;
+    float: left;
+    margin-left: 20px;
+    
+}
+
+.wrap{
+    padding: 28px;
+}

@@ -86,41 +86,63 @@
 </template>
 
 <template name = "collections">
-  <div class="wrapper">
+
+
+  <!--<div class="row">-->
+    <!--<div class="col-sm-6 col-md-2">-->
+  <div class="wrap">
     {{#each movie}}
-    <div class="collections">
-      <div class="text-center">
-        <img class = "thumbnail" src="{{thumbnail}}">
+  <div class="thumbnail" id="thumb">
+        <img src="{{thumbnail}}" alt="...">
+        <div class="caption">
+          <h3>{{movie_name}}</h3>
+          <p>{{description}}</p>
+          <p>Release:{{date}}</p>
+          <p>Rating:{{rating}}</p>
+        </div>
       </div>
-      <div class="clear"></div>
-      <label>Movie:</label>
-      <span>{{movie_name}}</span>
-      <div class="clear"></div>
-      <label>Release Date:</label>
-      <span>{{date}}</span>
-      <div class="clear"></div>
-      <label>Description:</label>
-      <div class="clear"></div>
-      <span>{{description}}</span>
-      <div class="clear"></div>
-      {{#if rating}}
-      <label>Rating:</label>
-      <span>{{rating}}</span>
-      {{else}}
-      {{#if currentUser}}
-      <div class="input-group" id="rateinput">
-        <div class="input-group-addon" id="addon">Rating</div>
-        <input class="form-control" id="ratinginput" type="email" placeholder="0-10">
-        <button type="button" id="send" class= "btn btn-default">Submit</button>
-      </div>
-      {{else}}
-      <div class="clear"></div>
-      <span class="label label-danger">You need to Sign in to rate the movie</span>
-      {{/if}}
-      {{/if}}
-    </div>
+    <!--</div>-->
+  <!--</div>-->
     {{/each}}
   </div>
+
+
+
+
+      <!---->
+      <!---->
+      <!--<div class="text-center">-->
+        <!--<img class = "thumbnail" src="{{thumbnail}}" width="214" height="317">-->
+      <!--</div>-->
+      <!--<div class="clear"></div>-->
+      <!--<span class="label label-info">Movie</span>-->
+      <!--<span>{{movie_name}}</span>-->
+      <!--<div class="clear"></div>-->
+      <!--<span class="label label-info">Release</span>-->
+      <!--<span>{{date}}</span>-->
+      <!--<div class="clear"></div>-->
+      <!--<span class="label label-info">Gist</span>-->
+      <!--<div class="clear"></div>-->
+      <!--<span>{{description}}</span>-->
+      <!--<div class="clear"></div>-->
+      <!--{{#if rating}}-->
+      <!--<span class="label label-info">Rating</span>-->
+      <!--<span>{{rating}}</span>-->
+      <!--{{else}}-->
+      <!--{{#if currentUser}}-->
+      <!--<div class="input-group" id="rateinput">-->
+        <!--<div class="input-group-addon" id="addon">Rating</div>-->
+        <!--<input class="form-control" id="ratinginput" type="email" placeholder="0-10">-->
+        <!--<button type="button" id="send" class= "btn btn-default">Submit</button>-->
+      <!--</div>-->
+      <!--{{else}}-->
+      <!--<div class="clear"></div>-->
+      <!--<span class="label label-danger">You need to Sign in to rate the movie</span>-->
+      <!--{{/if}}-->
+      <!--{{/if}}-->
+    <!--</div>-->
+
+  <!--</div>-->
 </template>
 
 <template name ="addmovie">
@@ -128,28 +150,52 @@
   <h2><span class="label label-info" id="movie-label">Add a movie</span></h2>
   <hr>
   <!--<div class="row">-->
-    <div class="col-lg-5 col-lg-offset-1" id="addform">
-      <div class="input-group" id="movie-form1">
-        <span class="input-group-addon" id="addon4">Cover:</span>
-        <input type="text" class="form-control " id="url" placeholder="URL for your Cover picture">
-      </div>
-      <div class="input-group" id="movie-form2">
-        <span class="input-group-addon" id="addon4">Title:</span>
-        <input type="text" class="form-control movie-form" id="title" placeholder="Title of your movie">
-      </div>
-      <div class="input-group" id="movie-form3" >
-        <span class="input-group-addon" id="addon4">Release Date:</span>
-        <input type="text" class="form-control movie-form" id="date" placeholder="Eg. Sun Dec 11 2011 ">
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon" id="addon4">Description:</span>
-        <input type="text" class="form-control movie-form" id="desc" placeholder="Gist of your movie">
-      </div>
-             <button type="button" id="publish" class= "btn btn-default">Publish</button>
-          </div><!-- /.col-lg-6 -->
-  <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
-  {{/if}}
-  <div class="or-spacer-vertical right">
-    <div class="mask"></div>
+  <div class="col-lg-5 col-lg-offset-1" id="addform">
+    <div class="input-group" id="movie-form1">
+      <span class="input-group-addon" id="addon4">Cover:</span>
+      <input type="text" class="form-control " id="url" placeholder="URL for your Cover picture">
+    </div>
+    <div class="input-group" id="movie-form2">
+      <span class="input-group-addon" id="addon4">Title:</span>
+      <input type="text" class="form-control movie-form" id="title" placeholder="Title of your movie">
+    </div>
+    <div class="input-group" id="movie-form3" >
+      <span class="input-group-addon" id="addon4">Release Date:</span>
+      <input type="text" class="form-control movie-form" id="date" placeholder="Eg. Sun Dec 11 2011 ">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" id="addon4">Description:</span>
+      <input type="text" class="form-control movie-form" id="desc" placeholder="Gist of your movie">
+    </div>
+    <button type="button" id="publish" class= "btn btn-default">Publish</button>
   </div>
+
+  <div class="col-lg-5 col-lg-offset-1" id="previewform">
+    <div class="input-group" id="movie-form1">
+      <span class="input-group-addon" id="addon4">Cover:</span>
+      <input type="text" class="form-control " id="url" placeholder="URL for your Cover picture">
+    </div>
+    <div class="input-group" id="movie-form2">
+      <!--<span class="input-group-addon" id="addon4">Title:</span>-->
+      <!--<input type="text" class="form-control movie-form" id="title2" placeholder="Title of your movie">-->
+    </div>
+    <div class="input-group" id="movie-form3" >
+      <span class="input-group-addon" id="addon4">Release Date:</span>
+      <input type="text" class="form-control movie-form" id="date" placeholder="Eg. Sun Dec 11 2011 ">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" id="addon4">Description:</span>
+      <input type="text" class="form-control movie-form" id="desc" placeholder="Gist of your movie">
+    </div>
+    <button type="button" id="publish" class= "btn btn-default">Publish</button>
+  </div>
+  <div id="reflect">hello</div>
+
+  <!-- /.col-lg-6 -->
+
+  <!--<div class="or-spacer-vertical right">-->
+    <!--<div class="mask"></div>-->
+  <!--</div>-->
+  {{/if}}
+
 </template>
