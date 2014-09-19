@@ -50,6 +50,35 @@
     </nav>
 </template>
 
+<template name="likemovie">
+
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <template name="sortmovie">
     <br>
     <br>
@@ -66,7 +95,7 @@
             <ul class="dropdown-menu" role="menu">
                 <li><a class="ascending" href="#">A-z</a></li>
                 <li><a class="descending" href="#">Z-a</a></li>
-                <li><a class="rate" href="#">Ratings</a></li>
+                <li><a class="rate" href="#">Likes</a></li>
                 <li><a class="releasedate" href="#">Release Date</a></li>
             </ul>
         </div>
@@ -79,35 +108,24 @@
 
 <template name = "collections">
     <div class="wrap">
+        <!--{{movie.movie_name}}-->
         {{#each movie}}
         <div class="thumbnail" id="thumb">
             <div class="thumbnail"><img src="{{thumbnail}}" alt="...">
             </div>
             <div class="caption">
                 <h3>{{movie_name}}</h3>
+                <hr>
                 <p>{{description}}</p>
                 <p>Release:{{date}}</p>
-                <p>Rating:{{rating}}</p>
+                <p>Likes:{{like}}</p>
             </div>
         </div>
         {{/each}}
     </div>
-    <!--{{#if rating}}-->
-    <!--<span class="label label-info">Rating</span>-->
-    <!--<span>{{rating}}</span>-->
-    <!--{{else}}-->
-    <!--{{#if currentUser}}-->
-    <!--<div class="input-group" id="rateinput">-->
-    <!--<div class="input-group-addon" id="addon">Rating</div>-->
-    <!--<input class="form-control" id="ratinginput" type="email" placeholder="0-10">-->
-    <!--<button type="button" id="send" class= "btn btn-default">Submit</button>-->
-    <!--</div>-->
-    <!--{{else}}-->
-    <!--<div class="clear"></div>-->
-    <!--<span class="label label-danger">You need to Sign in to rate the movie</span>-->
-    <!--{{/if}}-->
-    <!--{{/if}}-->
 </template>
+
+
 
 <template name ="addmovie">
     {{#if currentUser}}
@@ -136,9 +154,10 @@
     <div class="row">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail" id="thumb_preview">
-                <img src="http://affordable-templates.com/wp-content/uploads/2014/08/blank-poster-design-gutter-lpspookd.png" id="t_prev">
+                <img src="http://i.imgur.com/NUWSXfx.jpg">
                 <div class="caption">
                     <h3 id="reflect">Blank Poster</h3>
+                    <hr>
                     <p id="t_desc">This movie is about a guy wearing a black t-shirt holding a white poster in his hands in a grey room.</p>
                     <p id="t_date">12-08-2015</p>
                 </div>
