@@ -1,17 +1,20 @@
 <head>
     <title>IMDB RIP</title>
-    <script type="text/javascript" src="http://livevalidation.com/javascripts/src/1.3/livevalidation_standalone.compressed.js"></script>
 </head>
 
 <body>
 {{>navigation}}
+{{>likemovie}}
+<!--{{>vs}}-->
+<!--{{>likemovie}}-->
+{{>cleardiv}}
 {{>addmovie}}
 {{>cleardiv}}
-{{>sortmovie}}
 {{>cleardiv}}
 {{>collections}}
 </body>
 
+<!--navbar-->
 <template name = "navigation">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -50,61 +53,75 @@
     </nav>
 </template>
 
-<template name="likemovie">
-
-</template>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<template name="sortmovie">
-    <br>
-    <br>
-    <h2><span class="label label-info" id="movie-label">Movies</span></h2>
-    <hr>
-    <div class="pull-right sort">
-        <!-- Split button -->
-        <div class="btn-group" id="srt-btn">
-            <button type="button" class="btn btn-info sorting">Sort by</button>
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a class="ascending" href="#">A-z</a></li>
-                <li><a class="descending" href="#">Z-a</a></li>
-                <li><a class="rate" href="#">Likes</a></li>
-                <li><a class="releasedate" href="#">Release Date</a></li>
-            </ul>
-        </div>
-    </div>
-</template>
-
+<!--clear div-->
 <template name="cleardiv">
     <div class="clear"></div>
 </template>
+
+<!--add a movie-->
+<template name ="addmovie">
+    {{#if currentUser}}
+    <h2><span class="label label-info" id="movie-label">Add a movie</span></h2>
+    <hr>
+    <!--<div class="row">-->
+    <div class="col-lg-5 col-lg-offset-1" id="addform">
+        <div class="input-group" id="movie-form1">
+            <span class="input-group-addon" id="addon4">Cover:</span>
+            <input type="text" class="form-control" id="url" placeholder="URL for your Cover picture">
+        </div>
+        <div class="input-group" id="movie-form2">
+            <span class="input-group-addon" id="addon4">Title:</span>
+            <input type="text" class="form-control movie-form" id="title" placeholder="Title of your movie">
+        </div>
+        <div class="input-group" id="movie-form3">
+            <span class="input-group-addon" id="addon4">Description:</span>
+            <input type="text" class="form-control movie-form" id="desc" placeholder="Gist of your movie">
+        </div>
+        <div class="input-group" id="movie-form4" >
+            <span class="input-group-addon" id="addon4">Release Date:</span>
+            <input type="text" class="form-control movie-form" id="date" placeholder="Eg. Sun Dec 11 2011 ">
+        </div>
+        <button type="button" id="publish" class= "btn btn-default">Publish</button>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail" id="thumb_preview">
+                <img id ="t_prev" src="http://i.imgur.com/NUWSXfx.jpg">
+                <div class="caption">
+                    <h3 id="reflect">Blank Poster</h3>
+                    <hr>
+                    <p id="t_desc">This movie is about a guy wearing a black t-shirt holding a white poster in his hands in a grey room.</p>
+                    <p id="t_date">12-08-2015</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {{/if}}
+</template>
+
+<!--<template name="sortmovie">-->
+    <!--<br>-->
+    <!--<br>-->
+    <!--<h2><span class="label label-info" id="movie-label">Movies</span></h2>-->
+    <!--<hr>-->
+    <!--<div class="pull-right sort">-->
+        <!--&lt;!&ndash; Split button &ndash;&gt;-->
+        <!--<div class="btn-group" id="srt-btn">-->
+            <!--<button type="button" class="btn btn-info sorting">Sort by</button>-->
+            <!--<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">-->
+                <!--<span class="caret"></span>-->
+                <!--<span class="sr-only">Toggle Dropdown</span>-->
+            <!--</button>-->
+            <!--<ul class="dropdown-menu" role="menu">-->
+                <!--<li><a class="ascending" href="#">A-z</a></li>-->
+                <!--<li><a class="descending" href="#">Z-a</a></li>-->
+                <!--<li><a class="rate" href="#">Likes</a></li>-->
+                <!--<li><a class="releasedate" href="#">Release Date</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</template>-->
 
 <template name = "collections">
     <div class="wrap">
@@ -125,45 +142,31 @@
     </div>
 </template>
 
+<template name="likemovie">
+    <div class="col-md-7 col-lg-offset-3">
 
-
-<template name ="addmovie">
-    {{#if currentUser}}
-    <h2><span class="label label-info" id="movie-label">Add a movie</span></h2>
-    <hr>
-    <!--<div class="row">-->
-    <div class="col-lg-5 col-lg-offset-1" id="addform">
-        <div class="input-group" id="movie-form1">
-            <span class="input-group-addon" id="addon4">Cover:</span>
-            <input type="text" class="form-control " id="url" placeholder="URL for your Cover picture">
-        </div>
-        <div class="input-group" id="movie-form2">
-            <span class="input-group-addon" id="addon4">Title:</span>
-            <input type="text" class="form-control movie-form" id="title" placeholder="Title of your movie">
-        </div>
-        <div class="input-group" id="movie-form3">
-            <span class="input-group-addon" id="addon4">Description:</span>
-            <input type="text" class="form-control movie-form" id="desc" placeholder="Gist of your movie">
-        </div>
-        <div class="input-group" id="movie-form4" >
-            <span class="input-group-addon" id="addon4">Release Date:</span>
-            <input type="text" class="form-control movie-form" id="date" placeholder="Eg. Sun Dec 11 2011 ">
-        </div>
-        <button type="button" id="publish" class= "btn btn-default">Publish</button>
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail" id="thumb_preview">
-                <img src="http://i.imgur.com/NUWSXfx.jpg">
-                <div class="caption">
-                    <h3 id="reflect">Blank Poster</h3>
-                    <hr>
-                    <p id="t_desc">This movie is about a guy wearing a black t-shirt holding a white poster in his hands in a grey room.</p>
-                    <p id="t_date">12-08-2015</p>
-                </div>
+        <div class="thumbnail" id ="like_thumb">
+            <div class="thumbnail">
+                <img class="thumb_img_left" src="{{movielike.thumbnail}}" alt="...">
+                <span id="gl_left"    class="glyphicon glyphicon-heart thumb_glph_left"></span>
             </div>
+            <!--<div class="caption">-->
+                <!--<h3>{{movielike.movie_name}}</h3>-->
+            <!--</div>-->
         </div>
 
+        <div id="like_vs">
+            <h3 class="vs">V/S</h3>
+        </div>
+
+        <div class="thumbnail" id ="like_thumb">
+            <div class="thumbnail">
+                <img class="thumb_img_right"  src="{{movielike.thumbnail}}" alt="...">
+                <span class="glyphicon glyphicon-heart thumb_glph_right"></span>
+            </div>
+            <!--<div class="caption">-->
+                <!--<h3>{{movielike.movie_name}}</h3>-->
+            <!--</div>-->
+        </div>
     </div>
-    {{/if}}
 </template>

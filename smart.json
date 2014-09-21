@@ -1,11 +1,6 @@
 {
   "packages": {
     "accounts-ui-bootstrap-3": {},
-    "bootstrap-3": {},
-    "iron-router":
-      {
-          "git": "https://github.com/EventedMind/iron-router.git",
-          "branch": "blaze-integration"
-      }
+    "bootstrap-3": {}
   }
 }

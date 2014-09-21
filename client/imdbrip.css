@@ -32,7 +32,17 @@
 }
 
 .thumbnail{
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+}
+
+h3{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.caption{
+    padding: 0px;
 }
 
 #carousel-example-generic{
@@ -133,7 +143,59 @@
     height: 700px;
     float: left;
     margin-left: 20px;
+    margin-bottom: 20px;
 
+}
+
+#like_thumb{
+    width: 224px;
+    /*height: 400px;*/
+    float: left;
+    /*margin-left: 275px;*/
+    margin-bottom: 20px;
+}
+
+.thumb_img_left, .thumb_img_right{
+    position: relative;
+}
+
+.thumb_glph_right{
+    position: fixed;
+    font-size: 40px;
+    top: 210px;
+    left: 880px;
+    color: #ffffff;
+    /*display: none;*/
+}
+
+
+.thumb_glph_left{
+    position: fixed;
+    font-size: 40px;
+    top: 210px;
+    left: 430px;
+    color: #ffffff;
+    /*display: none;*/
+}
+
+.thumb_glph_left:hover{
+    color: red;
+}
+
+.thumb_glph_right:hover{
+    color: red;
+}
+
+
+.vs{
+    font-size: 42px;
+}
+#like_vs{
+    width: 224px;
+    height: 400px;
+    float: left;
+    margin-top: 120px;
+    margin-bottom: 20px;
 }
 
 .wrap{
