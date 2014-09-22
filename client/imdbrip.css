@@ -157,33 +157,47 @@ h3{
 
 .thumb_img_left, .thumb_img_right{
     position: relative;
+    height: 300px;
 }
 
-.thumb_glph_right{
-    position: fixed;
-    font-size: 40px;
-    top: 210px;
-    left: 880px;
-    color: #ffffff;
-    /*display: none;*/
+.thumb_glph_right {
+    position: absolute;
+    font-size: 80px;
+    top: 200px;
+    left: 540px;
+    color: #F8FCFF;
 }
 
 
 .thumb_glph_left{
-    position: fixed;
-    font-size: 40px;
-    top: 210px;
-    left: 430px;
-    color: #ffffff;
+    position: absolute;
+    font-size: 80px;
+    top: 200px;
+    left: 90px;
+    color: #F8FCFF;
     /*display: none;*/
 }
 
-.thumb_glph_left:hover{
+.like_heart{
     color: red;
 }
 
+.like_cal{
+    color: #59407F;
+}
+
+.like_desc{
+    color: #FF0051;
+}
+
+.thumb_glph_left:hover{
+    color: #CA0700;
+    cursor: pointer;
+}
+
 .thumb_glph_right:hover{
-    color: red;
+    color: #CA0700;
+    cursor: pointer;
 }
 
 
@@ -192,7 +206,6 @@ h3{
 }
 #like_vs{
     width: 224px;
-    height: 400px;
     float: left;
     margin-top: 120px;
     margin-bottom: 20px;
@@ -202,8 +215,40 @@ h3{
     padding: 28px;
 }
 
+.contain{
+    margin-top: 70px;
+    margin-bottom: 70px;
+    height: 322px;;
+}
+
 #thumb_preview{
     width: 224px;
     height: 700px;
     margin-left: 180px;
+}
+
+.ribbon{
+    position: absolute;
+    padding: 5px 45px;
+    width: 458px;
+    top: 159px;
+    text-align: center;
+    left: -94px;
+    z-index: -1;
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    transform: rotate(315deg);
+    box-shadow: 0 0 0 3px #FF9900, 0 0 20px -3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);
+    background-color: #FF9900;
+    color: #424242;
+    font-size: 34px;
+    font-family: sans-serif;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    -webkit-backface-visibility: hidden;
+    letter-spacing: .5px;
+    cursor: none;
+    height: 62px;
 }
