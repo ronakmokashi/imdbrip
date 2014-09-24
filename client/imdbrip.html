@@ -15,12 +15,13 @@
 </body>
 
 <!--navbar-->
-<template name = "navigation">
+<template name="navigation">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -48,8 +49,10 @@
                     </li>
                 </ul>
 
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
     </nav>
 </template>
 
@@ -59,7 +62,7 @@
 </template>
 
 <!--add a movie-->
-<template name ="addmovie">
+<template name="addmovie">
     {{#if currentUser}}
     <hr>
     <h2><span class="label label-info" id="movie-label">Add a movie</span></h2>
@@ -78,20 +81,23 @@
             <span class="input-group-addon" id="addon4">Description:</span>
             <input type="text" class="form-control movie-form" id="desc" placeholder="Gist of your movie">
         </div>
-        <div class="input-group" id="movie-form4" >
+        <div class="input-group" id="movie-form4">
             <span class="input-group-addon" id="addon4">Release Date:</span>
             <input type="text" class="form-control movie-form" id="date" placeholder="Eg. Sun Dec 11 2011 ">
         </div>
-        <button type="button" id="publish" class= "btn btn-default">Publish</button>
+        <button type="button" id="publish" class="btn btn-default">Publish</button>
     </div>
     <div class="row">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail" id="thumb_preview">
-                <img id ="t_prev" src="http://i.imgur.com/NUWSXfx.jpg">
+                <img id="t_prev" src="http://i.imgur.com/NUWSXfx.jpg">
+
                 <div class="caption">
                     <h3 id="reflect">Blank Poster</h3>
                     <hr>
-                    <p id="t_desc"><span class="glyphicon glyphicon glyphicon-film like_desc"></span> This movie is about a guy wearing a black t-shirt holding a white poster in his hands in a grey room.</p>
+                    <p id="t_desc"><span class="glyphicon glyphicon glyphicon-film like_desc"></span> This movie is
+                        about a guy wearing a black t-shirt holding a white poster in his hands in a grey room.</p>
+
                     <p id="t_date"><span class="glyphicon glyphicon glyphicon-calendar like_cal"></span> 12-08-2015</p>
                 </div>
             </div>
@@ -102,21 +108,23 @@
 </template>
 
 
-<template name = "collections">
+<template name="collections">
     <h2><span class="label label-info" id="movie-label">Top Hits</span></h2>
     <hr>
     <div class="wrap">
         <!--{{movie.movie_name}}-->
         {{#each movie}}
         <div class="thumbnail" id="thumb">
-            <div class="thumbnail"><img src="{{thumbnail}}" alt="...">
+            <div class="thumbnail"><img id="collection_thumb" src="{{thumbnail}}" alt="...">
             </div>
             <div class="caption">
                 <h3>{{movie_name}}</h3>
                 <hr>
                 <p><span class="glyphicon glyphicon glyphicon-film like_desc"></span> {{description}}</p>
+
                 <p><span class="glyphicon glyphicon glyphicon-calendar like_cal"></span> {{date}}</p>
-                <p><span class="glyphicon glyphicon-heart like_heart"></span> {{like}}</p>
+
+                <p><span class="glyphicon glyphicon-heart like_heart"></span> {{rating}}</p>
             </div>
         </div>
         {{/each}}
@@ -125,68 +133,39 @@
 
 <template name="likemovie">
 
-    <a class="ribbon">Hit or Miss</a>
-
+    <!--<a class="ribbon">Hit or Miss</a>-->
 
 
     <div class="col-md-7 col-lg-offset-3">
-<div class="contain">
-
-        {{#if change_movie}}
-
-    <div class="thumbnail" id ="like_thumb">
-        <div class="thumbnail">
-            <img class="thumb_img_left" src="{{random_movie_left.thumbnail}}" alt="...">
-            <p class="anything">{{random_movie.left.movie_name}}hello </p>
-            <span id="gl_left"    class="glyphicon glyphicon-heart thumb_glph_left"></span>
-        </div>
-        <!--<div class="caption">-->
-        <!--<h3>{{movielike.movie_name}}</h3>-->
-        <!--</div>-->
-    </div>
-
-        <div id="like_vs">
-            <h3 class="vs">V/S</h3>
-        </div>
+        {{#with movielike}}
+        <div class="contain">
+            <div class="thumbnail" id="like_thumb">
+                <div class="thumbnail">
+                    <img class="thumb_img_left" src="{{movie1.thumb}}">
+                    <h3>{{movie1.name}}</h3>
 
 
-        <div class="thumbnail" id ="like_thumb">
-            <div class="thumbnail">
-                <img class="thumb_img_right"  src="{{random_movie_right.thumbnail}}" alt="...">
-                <span class="glyphicon glyphicon-heart thumb_glph_right"></span>
+
+                    <span id="{{movie1.id}}" class="glyphicon glyphicon-heart thumb_glph_left gl_left" ></span>
+                </div>
+
             </div>
-            <!--<div class="caption">-->
-            <!--<h3>{{movielike.movie_name}}</h3>-->
-            <!--</div>-->
-        </div>
-{{else}}
 
-
-        <div class="thumbnail" id ="like_thumb">
-            <div class="thumbnail">
-                <img class="thumb_img_left" src="{{movielike.thumbnail}}" alt="...">
-                <span id="gl_left"    class="glyphicon glyphicon-heart thumb_glph_left"></span>
+            <div id="like_vs">
+                <h3 class="vs">V/S</h3>
             </div>
-            <!--<div class="caption">-->
-                <!--<h3>{{movielike.movie_name}}</h3>-->
-            <!--</div>-->
-        </div>
 
-        <div id="like_vs">
-            <h3 class="vs">V/S</h3>
-        </div>
 
-        <div class="thumbnail" id ="like_thumb">
-            <div class="thumbnail">
-                <img class="thumb_img_right"  src="{{movielike.thumbnail}}" alt="...">
-                <span class="glyphicon glyphicon-heart thumb_glph_right"></span>
+            <div class="thumbnail" id="like_thumb">
+                <div class="thumbnail">
+                    <img class="thumb_img_right" src="{{movie2.thumb}}" id="{{movie2.id}}">
+                    <span id ="{{movie2.id}}" class="glyphicon glyphicon-heart thumb_glph_right"></span>
+                    <h3>{{movie2.name}}</h3>
+                </div>
             </div>
-            <!--<div class="caption">-->
-                <!--<h3>{{movielike.movie_name}}</h3>-->
-            <!--</div>-->
+
         </div>
-    {{/if}}
-    </div>
+        {{/with}}
 
     </div>
 
