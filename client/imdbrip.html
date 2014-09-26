@@ -32,7 +32,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -78,7 +78,7 @@
         </div>
         <button type="button" id="publish" class="btn btn-default">Publish</button>
     </div>
-    <div class="row">
+    <div class="row addmovie_container" >
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail" id="thumb_preview">
                 <img id="t_prev" src="http://i.imgur.com/NUWSXfx.jpg">
@@ -88,7 +88,6 @@
                     <hr>
                     <p id="t_desc"><span class="glyphicon glyphicon glyphicon-film like_desc"></span> This movie is
                         about a guy wearing a black t-shirt holding a white poster in his hands in a grey room.</p>
-
                     <p id="t_date"><span class="glyphicon glyphicon glyphicon-calendar like_cal"></span> 12-08-2015</p>
                 </div>
             </div>
@@ -101,6 +100,7 @@
 
 <template name="collections">
     <h2><span class="label label-info" id="movie-label">Top Hits</span></h2>
+    <!--<button type="button" id="fb" class="btn btn-default">Facebook</button>-->
     <hr>
     <div class="wrap">
         <!--{{movie.movie_name}}-->
@@ -114,8 +114,9 @@
                 <p><span class="glyphicon glyphicon glyphicon-film like_desc"></span> {{description}}</p>
 
                 <p><span class="glyphicon glyphicon glyphicon-calendar like_cal"></span> {{date}}</p>
-
-                <p><span class="glyphicon glyphicon-heart like_heart"></span> {{rating}}</p>
+                <p><span class="glyphicon glyphicon-heart like_heart"></span> {{rating}}
+                <span class="glyphicon glyphicon-arrow-up like_up"></span>{{Hit}}
+                <span class="glyphicon glyphicon-arrow-down like_down"></span>{{Flop}}</p>
             </div>
         </div>
         {{/each}}
@@ -132,7 +133,7 @@
         <div class="contain">
             <div class="thumbnail" id="like_thumb">
                 <div class="thumbnail">
-                    <img class="thumb_img_left" src="{{movie1.thumb}}">
+                    <img class="thumb_img_left" src="{{movie1.thumb}}" id= "{{movie1.id}}">
                     <h3>{{movie1.name}}</h3>
 
 

@@ -1,3 +1,7 @@
+.addmovie_container{
+    overflow: hidden;
+}
+
 .signin{
     margin: 8px;
 }
@@ -145,6 +149,16 @@ h3{
     margin-left: 20px;
     margin-bottom: 20px;
 
+}
+
+.like_up{
+    color: green;
+    margin-left: 30px;
+}
+
+.like_down{
+    color: red;
+    margin-left: 30px;
 }
 
 #like_thumb{
