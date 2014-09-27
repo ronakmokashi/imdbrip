@@ -1,3 +1,4 @@
+
 .addmovie_container{
     overflow: hidden;
 }
@@ -41,7 +42,7 @@
 
 h3{
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bolder;
 }
 
@@ -82,6 +83,7 @@ h3{
 #publish{
     margin-top: 40px;
     margin-left: 170px;
+    border-radius: 0px;
 }
 
 
@@ -144,11 +146,46 @@ h3{
 
 #thumb{
     width: 224px;
-    height: 700px;
+    height: 360px;
     float: left;
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    /*border: transparent;*/
+    border-radius: 0px;
+    position: relative;
+    box-shadow: 0px 3px 20px rgba(66,71,75,1);
+}
 
+.rate_bar{
+    position: absolute;
+    top: 323px;
+    left: 10px;
+}
+
+/*.thumb_opaque{*/
+    /*opacity: 0.2;*/
+
+/*}*/
+
+#img_thumb{
+    border: transparent;
+    position: relative;
+}
+
+.desc{
+    margin-top: -323px;
+    display: none;
+    padding: 8px;
+    position: absolute;
+    top: 315px;
+}
+
+#img_thumb:hover .desc{
+    display: block;
+}
+
+.thumbnail:hover #collection_thumb{
+    opacity: 0.2;
 }
 
 .like_up{
@@ -167,6 +204,8 @@ h3{
     float: left;
     /*margin-left: 275px;*/
     margin-bottom: 20px;
+    border-radius: 0px;
+    box-shadow: 0px 3px 20px rgba(66,71,75,1);
 }
 
 .thumb_img_left, .thumb_img_right{
@@ -177,24 +216,32 @@ h3{
 .thumb_glph_right {
     position: absolute;
     font-size: 80px;
-    top: 200px;
-    left: 540px;
-    color: #F8FCFF;
+    top: 135px;
+    left: 70px;
+    color: #ffffff;
+    text-shadow: 0 0 13px black;
 }
 
 
 .thumb_glph_left{
     position: absolute;
     font-size: 80px;
-    top: 200px;
-    left: 90px;
-    color: #F8FCFF;
-    /*display: none;*/
+    top: 135px;
+    left: 60px;
+    color: #ffffff;
+    text-shadow: 0 0 13px black;
 }
 
 .like_heart{
     color: red;
+    margin-left: 30px;
+
 }
+
+.collection_thumb{
+    height: 300px;
+}
+
 
 .like_cal{
     color: #59407F;
@@ -237,8 +284,12 @@ h3{
 
 #thumb_preview{
     width: 224px;
-    height: 700px;
+    height: 570px;
     margin-left: 180px;
+    border-radius: 0px;
+    box-shadow: 0px 3px 20px rgba(66,71,75,1);
+    margin-bottom: 50px;
+    margin-top: 15px;
 }
 
 .ribbon{
@@ -265,4 +316,16 @@ h3{
     letter-spacing: .5px;
     cursor: none;
     height: 62px;
+}
+
+.label{
+    border-radius: 0px;
+}
+
+.input-group-addon{
+    border-radius: 0px;
+}
+
+.form-control{
+    border-radius: 0px;
 }

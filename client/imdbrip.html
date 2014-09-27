@@ -106,41 +106,36 @@
         <!--{{movie.movie_name}}-->
         {{#each movie}}
         <div class="thumbnail" id="thumb">
-            <div class="thumbnail"><img id="collection_thumb" src="{{thumbnail}}" alt="...">
+            <div class="thumbnail" id="img_thumb">
+                <img class="thumb_opaque" id="collection_thumb" src="{{thumbnail}}" alt="Can't Display Image" style="height: 300px; width: 240px">
+                <div class="desc">
+                    <h3>{{movie_name}}</h3>
+                    <p><span class="glyphicon glyphicon glyphicon-film like_desc"></span> {{description}}</p>
+                    <p><span class="glyphicon glyphicon glyphicon-calendar like_cal"></span> {{date}}</p>
+                </div>
             </div>
             <div class="caption">
-                <h3>{{movie_name}}</h3>
-                <hr>
-                <p><span class="glyphicon glyphicon glyphicon-film like_desc"></span> {{description}}</p>
 
-                <p><span class="glyphicon glyphicon glyphicon-calendar like_cal"></span> {{date}}</p>
-                <p><span class="glyphicon glyphicon-heart like_heart"></span> {{rating}}
-                <span class="glyphicon glyphicon-arrow-up like_up"></span>{{Hit}}
-                <span class="glyphicon glyphicon-arrow-down like_down"></span>{{Flop}}</p>
+                <p class="rate_bar"><span class="glyphicon glyphicon-heart like_heart"></span> {{rating}}
+                    <span class="glyphicon glyphicon-arrow-up like_up"></span>{{Hit}}
+                    <span class="glyphicon glyphicon-arrow-down like_down"></span>{{Flop}}</p>
             </div>
         </div>
         {{/each}}
     </div>
+
 </template>
 
 <template name="likemovie">
-
-    <!--<a class="ribbon">Hit or Miss</a>-->
-
-
     <div class="col-md-7 col-lg-offset-3">
         {{#with movielike}}
         <div class="contain">
             <div class="thumbnail" id="like_thumb">
-                <div class="thumbnail">
+                <div class="thumbnail" id="img_thumb">
                     <img class="thumb_img_left" src="{{movie1.thumb}}" id= "{{movie1.id}}">
-                    <h3>{{movie1.name}}</h3>
-
-
-
+                    <h3 class="like_moviename_left">{{movie1.name}}</h3>
                     <span id="{{movie1.id}}" class="glyphicon glyphicon-heart thumb_glph_left gl_left" ></span>
                 </div>
-
             </div>
 
             <div id="like_vs">
@@ -149,16 +144,13 @@
 
 
             <div class="thumbnail" id="like_thumb">
-                <div class="thumbnail">
+                <div class="thumbnail" id="img_thumb">
                     <img class="thumb_img_right" src="{{movie2.thumb}}" id="{{movie2.id}}">
                     <span id ="{{movie2.id}}" class="glyphicon glyphicon-heart thumb_glph_right"></span>
-                    <h3>{{movie2.name}}</h3>
+                    <h3 class="like_moviename_right">{{movie2.name}}</h3>
                 </div>
             </div>
-
         </div>
         {{/with}}
-
     </div>
-
 </template>
