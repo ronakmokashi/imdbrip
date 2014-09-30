@@ -5,8 +5,6 @@
 <body>
 {{>navigation}}
 {{>likemovie}}
-<!--{{>vs}}-->
-<!--{{>likemovie}}-->
 {{>cleardiv}}
 {{>addmovie}}
 {{>cleardiv}}
@@ -81,15 +79,17 @@
     <div class="row addmovie_container" >
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail" id="thumb_preview">
-                <img id="t_prev" src="http://i.imgur.com/NUWSXfx.jpg">
-
-                <div class="caption">
-                    <h3 id="reflect">Blank Poster</h3>
-                    <hr>
-                    <p id="t_desc"><span class="glyphicon glyphicon glyphicon-film like_desc"></span> This movie is
-                        about a guy wearing a black t-shirt holding a white poster in his hands in a grey room.</p>
-                    <p id="t_date"><span class="glyphicon glyphicon glyphicon-calendar like_cal"></span> 12-08-2015</p>
+                <img id="t_prev" src="http://i.imgur.com/NUWSXfx.jpg" style="height: 300px; width: 240px">
+                <div class="desc">
+                    <div class="caption">
+                        <h3 id="reflect">Blank Poster</h3>
+                        <hr>
+                        <p id="t_desc"><span class="glyphicon glyphicon glyphicon-film like_desc"></span> This movie is
+                            about a guy wearing a black t-shirt holding a white poster in his hands in a grey room.</p>
+                        <p id="t_date"><span class="glyphicon glyphicon glyphicon-calendar like_cal"></span> 12-08-2015</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -127,12 +127,13 @@
 </template>
 
 <template name="likemovie">
+{{#if currentUser}}
     <div class="col-md-7 col-lg-offset-3">
         {{#with movielike}}
         <div class="contain">
             <div class="thumbnail" id="like_thumb">
                 <div class="thumbnail" id="img_thumb">
-                    <img class="thumb_img_left" src="{{movie1.thumb}}" id= "{{movie1.id}}">
+                    <img class="thumb_img_left" src="{{movie1.thumb}}" id= "{{movie1.id}}" style="height: 300px; width: 240px">
                     <h3 class="like_moviename_left">{{movie1.name}}</h3>
                     <span id="{{movie1.id}}" class="glyphicon glyphicon-heart thumb_glph_left gl_left" ></span>
                 </div>
@@ -141,7 +142,6 @@
             <div id="like_vs">
                 <h3 class="vs">V/S</h3>
             </div>
-
 
             <div class="thumbnail" id="like_thumb">
                 <div class="thumbnail" id="img_thumb">
@@ -153,4 +153,6 @@
         </div>
         {{/with}}
     </div>
+    {{/if}}
 </template>
+

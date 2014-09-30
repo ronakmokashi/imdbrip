@@ -44,6 +44,7 @@ h3{
     text-align: center;
     font-size: 12px;
     font-weight: bolder;
+
 }
 
 .caption{
@@ -180,6 +181,18 @@ h3{
     top: 315px;
 }
 
+#thumb_preview:hover .desc{
+    display: block;
+}
+
+#thumb_preview:hover #t_prev{
+    opacity: 0.2;
+}
+
+#t_desc{
+    width: 180px;
+}
+
 #img_thumb:hover .desc{
     display: block;
 }
@@ -284,7 +297,8 @@ h3{
 
 #thumb_preview{
     width: 224px;
-    height: 570px;
+    height: 360px;
+    padding: 10px;
     margin-left: 180px;
     border-radius: 0px;
     box-shadow: 0px 3px 20px rgba(66,71,75,1);
